@@ -52,6 +52,7 @@ export interface MusicHeroProps {
   signature?: { name: string; url: string } | false
   sound?: boolean
   fullBleed?: boolean
+  background?: boolean
   className?: string
   style?: React.CSSProperties
 }
@@ -120,6 +121,7 @@ export default function MusicHero({
   signature = DEFAULT_SIGNATURE,
   sound = true,
   fullBleed = true,
+  background = false,
   className,
   style,
 }: MusicHeroProps) {
@@ -435,6 +437,39 @@ export default function MusicHero({
   }
 
   const activeTrack = tracks[activeIndex]
+
+  if (background) {
+    return (
+      <div
+        className={className}
+        aria-hidden="true"
+        style={{
+          position: "relative",
+          width: "100%",
+          height: fullBleed ? "100dvh" : "100%",
+          overflow: "hidden",
+          background: "transparent",
+          ...style,
+        }}
+      >
+        <SeamlessLoopVideo
+          src={videoSrc}
+          muted
+          volume={0}
+          playing
+          style={{ opacity: 0.62 }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(2, 6, 18, 0.3), rgba(2, 6, 18, 0.08) 42%, rgba(2, 6, 18, 0.48))",
+            pointerEvents: "none",
+          }}
+        />
+      </div>
+    )
+  }
 
   // ── MOBILE: entirely different, simplified composition —
   // no background image, no floating card, just the video filling

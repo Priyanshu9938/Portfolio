@@ -366,6 +366,22 @@ body::before {
   gap: var(--space-md);
 }
 
+.hero-identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.profile-icon {
+  width: 84px;
+  height: 84px;
+  flex: 0 0 84px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.42), 0 0 0 5px rgba(116, 185, 241, 0.12);
+}
+
 .hero-subhead {
   font-family: var(--font-mono);
   font-size: 14px;
@@ -594,6 +610,12 @@ body::before {
 
   .hero-section {
     padding: var(--space-xl) var(--space-md);
+  }
+
+  .profile-icon {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
   }
 
   .scaffold-card {

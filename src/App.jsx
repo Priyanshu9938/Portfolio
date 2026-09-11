@@ -1,4 +1,5 @@
 import heroBg from '../backgroud.jpg';
+import profilePhoto from '../IMG_20260904_195826_200.jpg';
 import MetroHero from "@/components/ui/scroll-locked-video-hero";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
       >
         <MetroHero
           fullBleed={true}
+          background={true}
           title=""
           signature={false}
           sound={false}
@@ -67,7 +69,14 @@ export default function App() {
             </div>
 
             <div className="hero-header">
-              <h1 className="display-hero">Priyanshu Sahoo</h1>
+              <div className="hero-identity">
+                <img
+                  className="profile-icon"
+                  src={profilePhoto}
+                  alt="Priyanshu Sahoo"
+                />
+                <h1 className="display-hero">Priyanshu Sahoo</h1>
+              </div>
               <p className="hero-subhead">
                 BTech AI/ML '28 | Bridging Technical Problem Solving (C/C++) with Market &amp; Financial Analysis
               </p>
